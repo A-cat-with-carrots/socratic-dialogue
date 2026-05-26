@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+  苏格拉底对话体 · 网页排版模板
+  用法：
+  1. 改 <title> 和 <h1>（主标）、.sub（副标，可放核心生造词+白话注解）。
+  2. 旁白用 <p class="narr">。
+  3. 每句对话用一行 .line：信徒用 phi 色，苏格拉底用 soc 色。
+       <div class="line phi"><span class="who phi">斐洛</span><span class="say">……</span></div>
+       <div class="line soc"><span class="who soc">苏格拉底</span><span class="say">……</span></div>
+  4. 想强调的金句可单独用 <div class="pull"><span>……</span></div>。
+  5. 结尾旁白用 <div class="coda">…</div>，最后一句可 text-align:center 加粗。
+  6. 参考文献放 <div class="refs">。
+  双色、羊皮纸调、手机自适应都已内置。改两人名字时把 who 文本换掉即可。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>标题</title>
+<style>
+  :root{
+    --ink:#1f1c18; --soft:#46423c; --faint:#9a9388;
+    --soc:#9a6a2f;   /* 苏格拉底 古铜 */
+    --phi:#1f6feb;   /* 信徒 蓝 */
+    --line:#e7e3da; --bg:#faf8f3; --narr:#6f6a60;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Songti SC","STSong",-apple-system,"PingFang SC","Microsoft YaHei",serif;
+    line-height:1.95;font-size:17px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:680px;margin:0 auto;padding:60px 22px 96px;}
+  header{margin-bottom:40px;text-align:center;}
+  h1{font-size:30px;line-height:1.4;letter-spacing:.5px;font-weight:700;}
+  .sub{margin-top:14px;font-size:15px;color:var(--faint);letter-spacing:1px;font-style:italic;}
+  .rule{width:46px;height:3px;background:var(--soc);margin:22px auto 0;border-radius:2px;}
+  .narr{color:var(--narr);font-style:italic;margin:26px 0;padding:0 4px;text-align:justify;}
+  .line{margin:14px 0;display:flex;gap:10px;align-items:baseline;}
+  .who{flex:0 0 auto;font-weight:700;font-style:normal;font-size:15px;min-width:62px;letter-spacing:.5px;}
+  .who.soc{color:var(--soc);}
+  .who.phi{color:var(--phi);}
+  .say{flex:1;color:var(--soft);text-align:justify;}
+  .line.soc .say{color:#2b2620;}
+  .pull{margin:36px 0;padding:28px 24px;background:#fff;border:1px solid var(--line);border-radius:14px;
+    text-align:center;font-size:21px;line-height:1.65;font-weight:700;letter-spacing:.5px;
+    box-shadow:0 6px 24px rgba(0,0,0,.04);}
+  .pull span{background:linear-gradient(transparent 60%, #f0e2c4 60%);padding:0 4px;}
+  .divider{margin:40px 0;text-align:center;color:var(--faint);letter-spacing:8px;font-size:14px;}
+  .coda{margin-top:8px;}
+  .coda p{margin:0 0 20px;color:var(--soft);text-align:justify;}
+  .refs{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);}
+  .refs h3{font-size:14px;font-weight:700;color:var(--soft);letter-spacing:2px;margin-bottom:14px;font-style:normal;}
+  .refs ol{margin:0;padding-left:20px;}
+  .refs li{font-size:13px;line-height:1.7;color:var(--narr);margin-bottom:8px;word-break:break-all;}
+  .refs a{color:var(--phi);text-decoration:none;}
+  .end{margin-top:36px;padding-top:26px;border-top:1px solid var(--line);text-align:center;font-size:14px;color:var(--faint);letter-spacing:2px;}
+  @media (max-width:480px){
+    body{font-size:16px;} h1{font-size:24px;} .wrap{padding:44px 18px 72px;}
+    .who{min-width:0;flex-basis:100%;} .line{flex-direction:column;gap:2px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>主标题</h1>
+    <div class="rule"></div>
+    <div class="sub">副标：核心生造词 + 一句白话注解</div>
+  </header>
+
+  <p class="narr">开场旁白：设一个场景，把读者领进门。</p>
+
+  <div class="line phi"><span class="who phi">信徒名</span><span class="say">信徒的台词。</span></div>
+  <div class="line soc"><span class="who soc">苏格拉底</span><span class="say">苏格拉底的提问。</span></div>
+
+  <div class="pull"><span>一句想强调的金句</span></div>
+
+  <p class="narr">中段旁白：一处停顿、留白。</p>
+
+  <div class="divider">· · ·</div>
+
+  <div class="coda">
+    <p>结尾旁白：揭穿这是虚构，点出"我编苏格拉底来拷问我自己"。</p>
+    <p style="text-align:center;font-weight:700;color:var(--ink);margin-top:10px;">收尾的那几个真问题。</p>
+  </div>
+
+  <div class="refs">
+    <h3>参考文献</h3>
+    <ol>
+      <li>经典文本只标篇目。</li>
+      <li>拿不准的事实贴来源 <a href="#">链接</a>。</li>
+    </ol>
+  </div>
+
+  <div class="end">— 完 —</div>
+</div>
+</body>
+</html>
